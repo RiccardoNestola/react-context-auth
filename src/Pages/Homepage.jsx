@@ -19,7 +19,7 @@ const Homepage = () => {
         getPosts();
     }, []);
 
-    const [isModalOpen, setModalOpen] = useState(false);
+
     const [posts, setPosts] = useState([]);
     const [postToEdit, setPostToEdit] = useState(null);
 
@@ -57,10 +57,10 @@ const Homepage = () => {
 
     return (
         <>
-            <Header onOpenModal={() => setModalOpen(true)} />
+            {/* <Header onOpenModal={() => setModalOpen(true)} /> */}
             <Carousel images={images} />
-            <Modal isOpen={isModalOpen} onClose={() => { setModalOpen(false); setPostToEdit(null); }} onAddPost={addPost} onSave={editPost} existingPost={postToEdit} apiUrl="http://localhost:3005/posts/" />
-            <CardList posts={posts} onDeletePost={deletePost} onEditPost={openEditModal} />
+            {/*             <Modal isOpen={isModalOpen} onClose={() => { setModalOpen(false); setPostToEdit(null); }} onAddPost={addPost} onSave={editPost} existingPost={postToEdit} apiUrl="http://localhost:3005/posts/" />
+ */}            <CardList posts={posts} onDeletePost={deletePost} onEditPost={openEditModal} />
         </>
     )
 }
