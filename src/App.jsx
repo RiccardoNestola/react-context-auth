@@ -18,12 +18,10 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/" element={<Homepage />}></Route>
+            <Route path="/" element={React.createElement(withAuth(Homepage))}></Route>
             <Route path="/chi-sono" element={<ChiSono />}></Route>
             <Route path="/contatti" element={<Contatti />}></Route>
             <Route path="/login" element={<Login />} />
-
-            <Route path="/dashboard" element={React.createElement(withAuth(Dashboard))} />
 
           </Route>
         </Routes>

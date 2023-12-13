@@ -20,24 +20,27 @@ const Header = ({ onOpenModal }) => {
                         <NavLink to='/contatti' className="mr-5 hover:text-gray-900">Contatti</NavLink>
                     </nav>
 
-                    {isAuthenticated && (
-                        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" onClick={onOpenModal}>Crea Post
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mx-1 w-5 h-5">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                            </svg>
-                        </button>
 
+                    <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" onClick={onOpenModal}>Crea Post
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mx-1 w-5 h-5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                    </button>
+
+
+                    {isAuthenticated ? (
+                        <Link to='/login' className=" mx-2 inline-flex items-center bg-red-100 border-0 py-1 px-3 focus:outline-none hover:bg-red-200 rounded text-base mt-4 md:mt-0" onClick={onOpenModal}>logout
+                        </Link>
+                    ) : (
+                        <Link to='/login' className=" mx-2 inline-flex items-center bg-green-100 border-0 py-1 px-3 focus:outline-none hover:bg-green-200 rounded text-base mt-4 md:mt-0" onClick={onOpenModal}>Accedi
+                        </Link>
                     )}
-
-
-                    <Link to='/login' className=" mx-2 inline-flex items-center bg-green-100 border-0 py-1 px-3 focus:outline-none hover:bg-green-200 rounded text-base mt-4 md:mt-0" onClick={onOpenModal}>Accedi
-
-                    </Link>
 
                 </div>
             </header>
+
         </>
     )
-}
+};
 
 export default Header;

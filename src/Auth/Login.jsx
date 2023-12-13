@@ -56,6 +56,11 @@ const Login = () => {
                             Login
                         </button>
                     </form>
+
+                    <div className="flex items-center justify-between mt-4">
+                        <p className="text-sm font-medium text-gray-700"> per accesso demo usare username: riccardo password: 1234 </p>
+                    </div>
+
                 </div>
             </div>
 

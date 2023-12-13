@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
         if (username === fakeUser.username && password === fakeUser.password) {
             setIsAuthenticated(true);
-            navigate("/dashboard");
+            navigate("/");
             setUser({ name: username });
 
         } else {
